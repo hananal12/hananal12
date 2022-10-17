@@ -16,9 +16,6 @@ mainTab.newButton("Lauch Venity", function()
     loadstring(game:HttpGet(""))()
 end)
 
-local dropdown = mainTab.newDropdown("Player Selector", "Select", game:GetService("Players"):GetPlayers(), function(state)
-    print("Player selected: "..state);
-end)
 --notification
 ezlib.newNotif(ezlib.enum.notifType.text, "Venity Launcher").play().delete();
 
