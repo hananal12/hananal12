@@ -25,23 +25,23 @@ local Line = Drawing.new("Line")
 local Circle = Drawing.new("Circle") 
 local Plr = game.Players.LocalPlayer Mouse.KeyDown:Connect(function(KeyPressed) 
     if KeyPressed == (Settings.AimLock.Aimlockkey) then if 
-    Settings.AimLock.Enabled == true then 
-        Settings.AimLock.Enabled = false if 
-        Settings.AimLock.Notifications == true then 
-            Plr = FindClosestPlayer() game.StarterGui:SetCore("SendNotification", { 
-                Title = "Purple Lock", 
-                Text = "Unlocked" 
-            }) 
-        end 
-    else Plr = FindClosestPlayer() Settings.AimLock.Enabled = true if 
-        Settings.AimLock.Notifications == true then 
-            game.StarterGui:SetCore("SendNotification", { 
-                Title = "Purple Lock", 
-                Text = "Locked On : " .. tostring(Plr.Character.Humanoid.DisplayName) 
-            }) 
+        Settings.AimLock.Enabled == true then 
+            Settings.AimLock.Enabled = false if 
+            Settings.AimLock.Notifications == true then 
+                Plr = FindClosestPlayer() game.StarterGui:SetCore("SendNotification", { 
+                    Title = "Purple Lock", 
+                    Text = "Unlocked" 
+                }) 
+            end 
+        else Plr = FindClosestPlayer() Settings.AimLock.Enabled = true if 
+            Settings.AimLock.Notifications == true then 
+                game.StarterGui:SetCore("SendNotification", { 
+                    Title = "Purple Lock", 
+                    Text = "Locked On : " .. tostring(Plr.Character.Humanoid.DisplayName) 
+                }) 
+            end 
         end 
     end 
-end 
 end) 
 function FindClosestPlayer() 
     local ClosestDistance, ClosestPlayer = math.huge, nil; for _, Player in next, game:GetService("Players"):GetPlayers() do if 
@@ -85,6 +85,6 @@ local old = mt.__namecall setreadonly(mt, false) mt.__namecall = newcclosure(fun
         args[3] = Plr.Character[Settings.AimLock.Aimpart].Position + (Plr.Character[Settings.AimLock.Aimpart].Velocity * Settings.AimLock.Prediction) return 
         old(unpack(args)) 
     end 
-    return 
-    old(...) 
+
+    return old(...) 
 end)
